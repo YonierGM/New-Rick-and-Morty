@@ -1,0 +1,47 @@
+<app-header></app-header>
+<section class="contenido">
+  <div class="cards">
+    <div class="card" *ngFor="let item of characters | paginate: { 
+          itemsPerPage: 20, totalItems: total, currentPage: page }">
+
+      <div class="card-header">
+
+        <img src="{{item.image}}" class="card-img-top perfil">
+
+      </div>
+
+      <div class="card-body">
+
+        <div class="nombre_estado">
+          <h2 class="card-text">{{item.name}}</h2>
+
+          <div class="estado">
+            <div class="senal"
+              [ngClass]="{verde: item.status === 'Alive', rojo: item.status === 'Dead', gray: item.status === 'unknown'}">
+            </div>
+            <p>{{item.status}} - {{item.species}}</p>
+          </div>
+        </div>
+
+        <div class="location">
+          <span>Last known location:</span>
+          <p><a href="">{{item.location.name}}</a></p>
+        </div>
+
+        <div class="firts_seen">
+          <span>First seen in:</span>
+          <div class="ep" *ngFor="let ep of episodes">
+            <p *ngIf="item.episode[0] == ep.url"> <a href="">{{ep.name}}</a></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="pagination-controls-div">
+    <pagination-controls class="pagination-controls" (pageChange)="onPageChange($event)" previousLabel="Previous"
+      nextLabel="Next">
+    </pagination-controls>
+  </div>
+</section>

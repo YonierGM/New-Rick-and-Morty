@@ -1,0 +1,92 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 60px;
+    padding: 0px 1.5rem;
+}
+
+.support_us {
+    background: rgb(255, 152, 0);
+    border-radius: 0.5rem;
+    padding: 0.2rem .6rem;
+    color: rgb(255, 255, 255);
+    display: none;
+}
+
+.ul {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    height: 100%;
+}
+
+.ul button {
+    color: black;
+    border: solid 1px #ff9800;
+}
+
+.ul button:hover {
+    color: white;
+    background: #ff9800;
+}
+
+.ul li a {
+    color: black;
+    transition: .2s;
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.ul li a:hover {
+    color: #ff9800;
+}
+
+.jumbotrom {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.jumbotrom .titulo-jumbotrom {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 6em;
+
+    position: absolute;
+    margin: 0;
+    text-align: center;
+}
+
+.hero-image {
+    overflow: hidden;
+}
+
+@media (max-width: 425px) {
+    .btn-outline-warning {
+        display: none;
+    }
+
+    .support_us {
+        display: block;
+    }
+
+    .jumbotrom .titulo-jumbotrom {
+        font-size: 3em;
+    }
+}
+
+/* Ejecuta estas condiciones CSS para resoluciones entre 426px y 768px*/
+@media screen and (min-width:426px) and (max-width:768px) {
+    .jumbotrom .titulo-jumbotrom {
+        font-size: 3em;
+    }
+}
