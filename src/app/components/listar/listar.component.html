@@ -1,5 +1,8 @@
-<app-header></app-header>
-<section class="contenido">
+<app-header *ngIf="!spinner"></app-header>
+
+<app-spinner *ngIf="spinner"></app-spinner>
+
+<section class="contenido" *ngIf="!spinner">
   <div class="cards">
     <div class="card" *ngFor="let item of characters | paginate: { 
           itemsPerPage: 20, totalItems: total, currentPage: page }">

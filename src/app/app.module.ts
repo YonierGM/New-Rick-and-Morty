@@ -10,13 +10,15 @@ import { RouterModule } from '@angular/router';
 
 import {NgxPaginationModule} from 'ngx-pagination';
 import { NavComponent } from './components/nav/nav.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ListarComponent,
-    NavComponent
+    NavComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,

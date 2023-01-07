@@ -13,6 +13,8 @@ export class ListarComponent implements OnInit {
   public characters: any = [];
   public episodes: any = [];
 
+  public spinner: boolean = false;
+
   constructor(
     private characterService: CharactersService
   ) { }
@@ -37,7 +39,6 @@ export class ListarComponent implements OnInit {
 
         this.episodes = episodes.results;
 
-
       },
       error: (e) => {
         console.error(e)
@@ -51,13 +52,12 @@ export class ListarComponent implements OnInit {
   }
 
   cargarCaracter() {
+    this.spinner = true;
     this.characterService.getCaracter(this.page).subscribe({
       next: (v) => {
 
         this.characters = v.results;
         this.total = v.info.count;
-
-        console.log(this.characters)
 
       },
 
@@ -67,6 +67,7 @@ export class ListarComponent implements OnInit {
 
       complete: () => {
         console.info('complete')
+        this.spinner = false;
       }
     });
   }
