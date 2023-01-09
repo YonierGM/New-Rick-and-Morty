@@ -11,6 +11,12 @@ import { RouterModule } from '@angular/router';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { NavComponent } from './components/nav/nav.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import {MatInputModule} from '@angular/material/input';
+import { SearchComponent } from './components/search/search.component';
+import { SearchPipe } from './pipes/search.pipe';
 
 @NgModule({
   declarations: [
@@ -18,14 +24,21 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     HeaderComponent,
     ListarComponent,
     NavComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    SearchComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    ReactiveFormsModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatInputModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

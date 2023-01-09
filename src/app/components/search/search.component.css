@@ -1,0 +1,16 @@
+.example-form{
+    display: flex;
+    justify-content: center;
+}
+
+.example-form .mat-form-field{
+    width: 90%;
+    margin: auto;
+}
+
+@media (min-width: 769px) {
+    .example-form .mat-form-field{
+        width: 50%;
+        margin: auto;
+    }
+}

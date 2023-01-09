@@ -1,8 +1,19 @@
-<app-header *ngIf="!spinner"></app-header>
+<app-nav></app-nav>
+<app-header></app-header>
 
 <app-spinner *ngIf="spinner"></app-spinner>
 
+<div class="busqueda">
+  <mat-form-field class="example-full-width">
+    <mat-label>Nombre</mat-label>
+    <input matInput placeholder="Busqueda por nombre" value="" (input)="filter($event)">
+  </mat-form-field>
+</div>
+
+<!-- <app-search (search)="handleSearch($event)"></app-search> -->
+
 <section class="contenido" *ngIf="!spinner">
+
   <div class="cards">
     <div class="card" *ngFor="let item of characters | paginate: { 
           itemsPerPage: 20, totalItems: total, currentPage: page }">
@@ -47,4 +58,5 @@
       nextLabel="Next">
     </pagination-controls>
   </div>
+
 </section>

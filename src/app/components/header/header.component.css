@@ -59,11 +59,11 @@
 .jumbotrom .titulo-jumbotrom {
     font-family: 'Montserrat', sans-serif;
     font-weight: 800;
-    font-size: 6em;
 
     position: absolute;
     margin: 0;
     text-align: center;
+    line-height: .8;
 }
 
 .hero-image {
@@ -87,6 +87,13 @@
 /* Ejecuta estas condiciones CSS para resoluciones entre 426px y 768px*/
 @media screen and (min-width:426px) and (max-width:768px) {
     .jumbotrom .titulo-jumbotrom {
-        font-size: 3em;
+        font-size: 5em;
+    }
+}
+
+@media (min-width: 769px) {
+
+    .jumbotrom .titulo-jumbotrom {
+        font-size: 6em;
     }
 }
